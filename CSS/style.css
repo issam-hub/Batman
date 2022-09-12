@@ -1,0 +1,762 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Product Sans bold";
+  src: url(../fonts/Product\ Sans\ Bold.ttf);
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Product Sans regular";
+  src: url(../fonts/Product\ Sans\ Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Komika Hand Bold-Italic";
+  src: url(../fonts/KOMIKHBI.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Komika Jam Italic";
+  src: url(../fonts/KOMIKJI_.ttf);
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Komika Slim Italic";
+  src: url(../fonts/KOMIKSLI.ttf);
+  font-weight: normal;
+  font-style: italic;
+}
+::-moz-selection {
+  color: white;
+  background-color: #302741;
+}
+::selection {
+  color: white;
+  background-color: #302741;
+}
+
+h1,
+h2 {
+  font-family: "Bangers", cursive;
+}
+
+/* Importing Global Rules */
+/* Importing colors */
+/* Importing Mixins */
+.landing {
+  height: 100vh;
+  background-image: url("../imgs/landing-bg3.svg");
+  background-size: cover;
+}
+.landing .header {
+  z-index: 500;
+  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-image: linear-gradient(180deg, black, transparent);
+}
+.landing .header a {
+  font-family: "Product Sans regular";
+  color: white;
+  transition: 0.4s;
+}
+.landing .header a:hover {
+  color: #f6e673;
+}
+.landing .header img {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .landing .header {
+    padding-bottom: 20px;
+  }
+  .landing .header li:not(:nth-child(4)) {
+    display: none;
+  }
+  .landing .header li:nth-child(1) {
+    order: 8;
+    padding-bottom: 15px;
+  }
+  .landing .header li:nth-child(2) {
+    order: 9;
+    padding-bottom: 15px;
+  }
+  .landing .header li:nth-child(3) {
+    order: 10;
+    padding-bottom: 15px;
+  }
+  .landing .header li:nth-child(5) {
+    order: 11;
+    padding-bottom: 15px;
+  }
+  .landing .header li:nth-child(6) {
+    order: 12;
+    padding-bottom: 15px;
+  }
+  .landing .header li:nth-child(7) {
+    order: 13;
+    padding-bottom: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .landing .bgc {
+    background-color: #302741;
+  }
+}
+.landing .intro {
+  position: relative;
+}
+.landing .intro .bat-signal {
+  padding-top: 70px;
+  text-align: center;
+}
+.landing .intro img {
+  animation: onAndOff 2s infinite 0.3s alternate-reverse;
+  border-radius: 50%;
+}
+.landing .intro h1 {
+  transform: translateY(-145%);
+  font-size: clamp(70px, 10vw, 110px);
+  position: relative;
+}
+.landing .intro h1::before {
+  content: "batman";
+  font-family: "Bangers", cursive;
+  font-size: clamp(70px, 10vw, 110px);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-48%, -2px);
+  color: #e0310d;
+}
+
+@-webkit-keyframes onAndOff {
+  0% {
+    background-color: rgba(246, 230, 115, 0.9);
+    opacity: 80%;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes onAndOff {
+  0% {
+    background-color: rgba(246, 230, 115, 0.9);
+    opacity: 80%;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.skills {
+  background-image: url("../imgs/skills-bg.svg");
+  background-size: cover;
+}
+.skills .cool-heading h1 {
+  transform: translateY(-175%);
+  font-size: 50px;
+  color: #e0310d;
+  position: relative;
+}
+.skills .cool-heading h1::before {
+  font-family: "Bangers", cursive;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-47%, -3px);
+  color: #f6e673;
+  content: "skills";
+}
+.skills .cool-heading p {
+  transform: translateY(-170%);
+  color: #948293;
+}
+.skills .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.skills .row .skill1,
+.skills .row .skill2,
+.skills .row .skill3 {
+  height: 70vh;
+  border: 4px solid black;
+}
+.skills .row .skill1 .text,
+.skills .row .skill2 .text,
+.skills .row .skill3 .text {
+  background-color: #fcfb61;
+}
+.skills .row .skill1 .text h4,
+.skills .row .skill2 .text h4,
+.skills .row .skill3 .text h4 {
+  font-family: "Komika Hand Bold-Italic";
+}
+.skills .row .skill1 .text p,
+.skills .row .skill2 .text p,
+.skills .row .skill3 .text p {
+  font-family: "Komika Slim Italic";
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .skills .row .skill1,
+.skills .row .skill2,
+.skills .row .skill3 {
+    width: 70%;
+  }
+}
+@media (max-width: 499px) {
+  .skills .row .skill1,
+.skills .row .skill2,
+.skills .row .skill3 {
+    width: 80%;
+  }
+}
+@media (max-width: 449px) {
+  .skills .row .skill1,
+.skills .row .skill2,
+.skills .row .skill3 {
+    width: 95%;
+  }
+}
+.skills .row .skill1 {
+  background-image: url("../imgs/skill1.svg");
+  background-size: cover;
+}
+.skills .row .skill2 {
+  background-image: url("../imgs/skill2.svg");
+  background-size: cover;
+}
+.skills .row .skill3 {
+  background-image: url("../imgs/skill3.svg");
+  background-size: cover;
+}
+.skills .row .skill1 .text {
+  width: 90%;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+.skills .row .skill2 .text {
+  width: 97%;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.skills .row .skill3 .text {
+  width: 90%;
+  -webkit-clip-path: polygon(13% 0, 100% 0%, 87% 100%, 0% 100%);
+          clip-path: polygon(13% 0, 100% 0%, 87% 100%, 0% 100%);
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.portfolio {
+  background-image: url("../imgs/portfolio-bg.svg");
+  background-size: cover;
+}
+.portfolio .cool-heading h1 {
+  transform: translateY(-175%);
+  font-size: 50px;
+  color: #e0310d;
+  position: relative;
+}
+.portfolio .cool-heading h1::before {
+  font-family: "Bangers", cursive;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-47%, -3px);
+  color: #f6e673;
+  content: "portfolio";
+}
+.portfolio .cool-heading p {
+  transform: translateY(-170%);
+  color: #948293;
+}
+.portfolio .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.portfolio .row .work1 {
+  background-image: url("../imgs/work1.svg");
+  background-size: cover;
+  height: 300px;
+  border: 4px solid white;
+  overflow: hidden;
+}
+.portfolio .row .work1 .caption {
+  font-family: "Komika Jam Italic";
+  height: 40%;
+  width: 100%;
+  background-image: url("../imgs/splash.svg");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  translate: -100%;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.portfolio .row .work1:hover .caption {
+  translate: 0;
+}
+.portfolio .row .work2 {
+  background-image: url("../imgs/work2.svg");
+  background-size: cover;
+  height: 300px;
+  border: 4px solid white;
+  overflow: hidden;
+}
+.portfolio .row .work2 .caption {
+  font-family: "Komika Jam Italic";
+  height: 40%;
+  width: 100%;
+  background-image: url("../imgs/splash.svg");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  translate: -100%;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.portfolio .row .work2:hover .caption {
+  translate: 0;
+}
+.portfolio .row .work3 {
+  background-image: url("../imgs/work3.svg");
+  background-size: cover;
+  height: 300px;
+  border: 4px solid white;
+  overflow: hidden;
+}
+.portfolio .row .work3 .caption {
+  font-family: "Komika Jam Italic";
+  height: 40%;
+  width: 100%;
+  background-image: url("../imgs/splash.svg");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  translate: -100%;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.portfolio .row .work3:hover .caption {
+  translate: 0;
+}
+.portfolio .row .work4 {
+  background-image: url("../imgs/work4.svg");
+  background-size: cover;
+  height: 300px;
+  border: 4px solid white;
+  overflow: hidden;
+}
+.portfolio .row .work4 .caption {
+  font-family: "Komika Jam Italic";
+  height: 40%;
+  width: 100%;
+  background-image: url("../imgs/splash.svg");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  translate: -100%;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.portfolio .row .work4:hover .caption {
+  translate: 0;
+}
+.portfolio .row .work5 {
+  background-image: url("../imgs/work5.svg");
+  background-size: cover;
+  height: 300px;
+  border: 4px solid white;
+  overflow: hidden;
+}
+.portfolio .row .work5 .caption {
+  font-family: "Komika Jam Italic";
+  height: 40%;
+  width: 100%;
+  background-image: url("../imgs/splash.svg");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  translate: -100%;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.portfolio .row .work5:hover .caption {
+  translate: 0;
+}
+.portfolio .row .work6 {
+  background-image: url("../imgs/work6.svg");
+  background-size: cover;
+  height: 300px;
+  border: 4px solid white;
+  overflow: hidden;
+}
+.portfolio .row .work6 .caption {
+  font-family: "Komika Jam Italic";
+  height: 40%;
+  width: 100%;
+  background-image: url("../imgs/splash.svg");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  translate: -100%;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.portfolio .row .work6:hover .caption {
+  translate: 0;
+}
+.portfolio .btn {
+  cursor: default;
+}
+.portfolio button {
+  width: 180px;
+  border-radius: 100px;
+  border: none;
+  margin-top: 60px;
+  background-image: url("../imgs/yellow-shades.svg");
+  background-size: cover;
+  position: relative;
+  padding: 16px 10px 18px 10px;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  font-weight: bold;
+  background-color: transparent;
+}
+@media (max-width: 549px) {
+  .portfolio button {
+    width: 130px;
+  }
+}
+.portfolio button::after {
+  content: "load more";
+  padding: 16px 10px 18px 10px;
+  background-color: #e0310d;
+  font-family: "Product Sans bold";
+  border-radius: 100px;
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  width: 101%;
+  height: 101%;
+  color: white;
+  transition: 0.3s;
+}
+.portfolio button:hover::after {
+  color: #fcfb61;
+  top: 0;
+  left: -0.5px;
+}
+
+.villains {
+  background-image: url("../imgs/villains-bg.svg");
+  background-size: cover;
+}
+.villains .cool-heading h1 {
+  transform: translateY(-175%);
+  font-size: 50px;
+  color: #e0310d;
+  position: relative;
+}
+.villains .cool-heading h1::before {
+  font-family: "Bangers", cursive;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-47%, -3px);
+  color: #f6e673;
+  content: "villains";
+}
+.villains .cool-heading p {
+  transform: translateY(-170%);
+  color: #948293;
+}
+.villains .row {
+  row-gap: 50px;
+}
+.villains .btn {
+  cursor: default;
+}
+.villains button {
+  width: 290px;
+  border-radius: 100px;
+  border: none;
+  margin-top: 60px;
+  background-image: url("../imgs/purple-shades.svg");
+  background-size: cover;
+  position: relative;
+  padding: 16px 10px 18px 10px;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  font-weight: bold;
+  background-color: transparent;
+}
+@media (max-width: 549px) {
+  .villains button {
+    width: 240px;
+  }
+}
+.villains button::after {
+  content: "see how i catched them";
+  padding: 16px 10px 18px 10px;
+  background-color: #302741;
+  font-family: "Product Sans bold";
+  border-radius: 100px;
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  width: 101%;
+  height: 101%;
+  color: white;
+  transition: 0.3s;
+}
+.villains button:hover::after {
+  color: white;
+  top: 0;
+  left: -0.5px;
+}
+
+.about {
+  background-image: url("../imgs/about-bg.svg");
+  background-size: cover;
+}
+.about .cool-heading h1 {
+  transform: translateY(-175%);
+  font-size: 50px;
+  color: #e0310d;
+  position: relative;
+}
+.about .cool-heading h1::before {
+  font-family: "Bangers", cursive;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-47%, -3px);
+  color: #f6e673;
+  content: "about";
+}
+.about .cool-heading p {
+  transform: translateY(-170%);
+  color: #948293;
+}
+.about .row .bruce,
+.about .row .bat {
+  height: 200px;
+  width: 200px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+@media (max-width: 767px) {
+  .about .row .bruce,
+.about .row .bat {
+    height: 120px;
+    width: 120px;
+  }
+}
+.about .row .bruce {
+  background-image: url("../imgs/bWayne.svg");
+  background-size: cover;
+}
+.about .row .bat {
+  background-image: url("../imgs/batman.svg");
+  background-size: cover;
+}
+.about .row img {
+  height: 100px;
+  width: 100px;
+}
+.about .infos {
+  font-family: "Komika Jam Italic";
+}
+.about .infos span {
+  color: #ff564f;
+}
+.about .infos::before {
+  content: "";
+  width: 100.7%;
+  height: 100.7%;
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  border: 3px solid black;
+}
+
+.contact {
+  background-image: url("../imgs/contact-bg.svg");
+  background-size: cover;
+}
+.contact .cool-heading h1 {
+  transform: translateY(-175%);
+  font-size: 50px;
+  color: #e0310d;
+  position: relative;
+}
+.contact .cool-heading h1::before {
+  font-family: "Bangers", cursive;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-47%, -3px);
+  color: #f6e673;
+  content: "contact";
+}
+.contact .cool-heading p {
+  transform: translateY(-170%);
+  color: #948293;
+}
+.contact .row div {
+  overflow: hidden;
+  transition: 0.3s;
+}
+.contact .row div img {
+  filter: saturate(40%);
+  transition: 0.4s;
+}
+.contact .row div .text {
+  font-family: "Komika Jam Italic";
+  font-size: clamp(1rem, 5vw, 1.7rem);
+  background-color: #fcfb61;
+  width: 50%;
+  height: 30%;
+  position: absolute;
+  bottom: 20px;
+}
+.contact .alfred .text {
+  left: 12px;
+  translate: -110%;
+}
+.contact .alfred:hover img {
+  filter: saturate(100%);
+}
+.contact .alfred:hover .text {
+  translate: 0;
+}
+.contact .scream .text {
+  right: 12px;
+  translate: 110%;
+}
+.contact .scream:hover img {
+  filter: saturate(100%);
+}
+.contact .scream:hover .text {
+  translate: 0;
+}
+.contact .btn {
+  cursor: default;
+}
+.contact button {
+  width: 220px;
+  border-radius: 100px;
+  border: none;
+  margin-top: 60px;
+  background-image: url("../imgs/golden-shades.svg");
+  background-size: cover;
+  position: relative;
+  padding: 16px 10px 18px 10px;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  font-weight: bold;
+  background-color: transparent;
+}
+@media (max-width: 549px) {
+  .contact button {
+    width: 170px;
+  }
+}
+.contact button::after {
+  content: "subscribe now";
+  padding: 16px 10px 18px 10px;
+  background-color: #f17e14;
+  font-family: "Product Sans bold";
+  border-radius: 100px;
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  width: 101%;
+  height: 101%;
+  color: white;
+  transition: 0.3s;
+}
+.contact button:hover::after {
+  color: yellow;
+  top: 0;
+  left: -0.5px;
+}
+.contact .extra-option {
+  font-family: "Product Sans regular";
+  margin: 0 auto;
+}
+.contact .extra-option h4 {
+  width: 70px;
+  margin: 20px auto;
+}
+.contact .extra-option h4::before, .contact .extra-option h4::after {
+  content: "";
+  height: 3px;
+  width: 70px;
+  background-color: #948293;
+  position: absolute;
+  top: 55%;
+}
+.contact .extra-option h4::before {
+  left: -100%;
+}
+.contact .extra-option h4::after {
+  right: -100%;
+}
+.contact .extra-option p {
+  font-family: "Product Sans bold";
+  font-size: clamp(1.2rem, 10vw, 1.5rem);
+  -webkit-text-stroke: 1.2px black;
+  translate: 0 50%;
+}
+
+.footer {
+  background-color: #302741;
+}
+.footer p {
+  font-family: "Product Sans bold";
+  font-size: 1.1rem;
+}
+
+.scrollBtn {
+  background-color: #fcfb61;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 50%;
+  margin: 10px auto;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.scrollBtn img {
+  width: 50px;
+  height: 50px;
+  rotate: 180deg;
+}/*# sourceMappingURL=style.css.map */
