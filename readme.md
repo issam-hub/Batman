@@ -33,4 +33,4 @@
 
 ### What I Learned
 
--   UI Design using figma, it was really awesome, i enjoyed making this project a lot as a fan of batman 🤩
+-   UI Design using figma, it was really awesome, i designed the whole thing from scratch and was a bet challenging but things went just fine, i really enjoyed making this project a lot as a fan of batman 🤩
