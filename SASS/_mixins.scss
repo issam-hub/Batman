@@ -1,0 +1,64 @@
+@use "../SASS/colors" as *;
+
+@mixin make-heading($word) {
+    .cool-heading {
+        h1 {
+            transform: translateY(-175%);
+            font-size: 50px;
+            color: $dark-red-color;
+            position: relative;
+            &::before {
+                font-family: "Bangers", cursive;
+                font-size: 50px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-47%, -3px);
+                color: $light-yellow-color;
+                content: $word;
+            }
+        }
+        p {
+            transform: translateY(-170%);
+            color: $light-purple-color;
+        }
+    }
+}
+
+@mixin buttonize($sentence, $width, $back-color, $front-color, $hover-color) {
+    width: $width;
+    @media (max-width: 549px) {
+        width: calc($width - 50px);
+    }
+    border-radius: 100px;
+    border: none;
+    margin-top: 60px;
+    background-image: url("../imgs/#{$back-color}.svg");
+    background-size: cover;
+    position: relative;
+    padding: 16px 10px 18px 10px;
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    font-weight: bold;
+    background-color: transparent;
+    &::after {
+        content: $sentence;
+        padding: 16px 10px 18px 10px;
+        background-color: $front-color;
+        font-family: "Product Sans bold";
+        border-radius: 100px;
+        position: absolute;
+        top: -10px;
+        left: 9px;
+        width: 101%;
+        height: 101%;
+        color: white;
+        transition: 0.3s;
+    }
+    &:hover {
+        &::after {
+            color: $hover-color;
+            top: 0;
+            left: -0.5px;
+        }
+    }
+}
